@@ -5,7 +5,10 @@
 # in that row. Returns False if otherwise.
 
 def row_tracker(row, index, memo):
-    """Helper function to that uses recursion to keep track of the indices that have been visited."""
+    """
+    Helper function to that uses recursion to keep track of solvable and insolveable conditions by returning either True
+     or False. Also keeps track of the indices that have been visited.
+     """
     right_side = False
     left_side = False
     row_size = len(row)
@@ -29,7 +32,7 @@ def row_tracker(row, index, memo):
 
 
 def add_token(row, memo):
-    """Represents the 0 token needed to be added at end of the puzzle"""
+    """Represents the 0 token needed to be added at end of the puzzle."""
     range_row = range(len(row))
     for _ in range_row:
         memo.append(0)
@@ -37,8 +40,8 @@ def add_token(row, memo):
 
 def row_puzzle(row):
     """
-    Calls the row_tracker function as a helper function. Returns True if row puzzle is solvable for given row. Returns
-    false if the puzzle is not solvable.
+    Calls add_token to generate token to be inserted at end of list. Calls the row_tracker function as a helper
+    function. Returns True if row puzzle is solvable for given row. Returns false if the puzzle is not solvable.
     """
     memo = []
     add_token(row, memo)
