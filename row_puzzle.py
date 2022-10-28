@@ -10,11 +10,14 @@ def row_tracker(row, index, memo):
     left_side = False
     row_size = len(row)
     position = row[index]
-    memo[index] = 1
+
     if index + 1 > row_size or index < 0 or memo[index]:
         return False
     if row_size == row[index] or index + 1 == row_size:
         return True
+
+    memo[index] = 1
+
     if index + position < row_size:
         right_side = row_tracker(row, position + index, memo)
     if index - position > 0:
