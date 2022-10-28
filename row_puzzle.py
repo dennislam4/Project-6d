@@ -33,7 +33,9 @@ def row_tracker(row, index, memo):
 
 
 def add_token(row, memo):
-    """Represents the 0 token needed to be added at end of the puzzle."""
+    """
+    Represents the 0 token needed to be added at end of the puzzle.
+    """
     range_row = range(len(row))
     for _ in range_row:
         memo.append(0)
