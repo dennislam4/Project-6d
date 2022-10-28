@@ -28,12 +28,20 @@ def row_tracker(row, index, memo):
         return False
 
 
+def add_token(row, memo):
+    """Represents the 0 token needed to be added at end of the puzzle"""
+    range_row = range(len(row))
+    for _ in range_row:
+        memo.append(0)
+
+
 def row_puzzle(row):
     """
     Calls the row_tracker function as a helper function. Returns True if row puzzle is solvable for given row. Returns
     false if the puzzle is not solvable.
     """
     memo = []
-    for index in range(len(row)):
-        memo.append(0)
+    add_token(row, memo)
     return row_tracker(row, 0, memo)
+
+
