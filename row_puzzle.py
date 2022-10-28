@@ -4,10 +4,11 @@
 # Description: Takes a list of integers that represents a row in a puzzle. Returns True if puzzle is able to be solved
 # in that row. Returns False if otherwise.
 
+
 def row_tracker(row, index, memo):
     """
-    Helper function to that uses recursion to keep track of solvable and insolveable conditions by returning either True
-     or False. Also keeps track of the indices that have been visited.
+    Helper function that uses recursion to keep track of solvable and insolveable conditions by returning either True
+    or False. Also keeps track of the indices that have been visited.
      """
     right_side = False
     left_side = False
